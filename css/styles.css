@@ -1,0 +1,22 @@
+* {
+    border: 1px solid red;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.container {
+    display: flex;
+}
+
+.title {
+    justify-content: space-around;
+}
+
+.main{
+    justify-content: center;
+}
+.tools div {
+    padding: 10px;
+
+
+}
