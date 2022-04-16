@@ -1,14 +1,25 @@
-menu1.addEventListener('click', function (e) {
-    console.log("menu1")
+Clear.addEventListener('click', function (e) {
+    clear();
 });
 
-menu2.addEventListener('click', function (e) {
-    console.log("menu2")
+red.addEventListener('click', function (e) {
+    color = "red"
 });
 
-menu3.addEventListener('click', function (e) {
-    console.log("menu2")
+green.addEventListener('click', function (e) {
+    color = "green"
 });
+
+rainbow.addEventListener('click', function (e) {
+    color = "green"
+});
+
+color = "blue"
+
+
+for (let i = 1; i < (64 * 64); i++) {
+    createCell();
+  }
 
 
 
@@ -20,11 +31,24 @@ function createCell() {
 
 }
 
-for (let i = 0; i < 12; i++) {
-    createCell();
-  }
 
 
 
+document.querySelectorAll('#cell')
+.forEach(e => e.addEventListener("mouseenter", function(e) {
+    // Here, `this` refers to the element the event was hooked on
+    console.log("clicked")
 
-window.onload = createCell;
+    e.target.style.backgroundColor = color;
+
+
+}));
+
+
+
+function clear() {
+	var elements = document.getElementsByClassName('cell'); // get all elements
+	for(var i = 0; i < elements.length; i++){
+		elements[i].style.backgroundColor = "white";
+	}
+}
